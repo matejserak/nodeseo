@@ -42,7 +42,7 @@ Instalátor PhantomJS lze stáhnout na adrese [http://phantomjs.org](http://phan
 
 ### Konfigurace
 
-Konfigurační proměnné můžete změnit v *config/congif.json*. Připojení do databáze ponechte klidně předdefinované. Do proměnné *gmailLogin* vyplňte Vaši gmailovou adresu (např. *login@gmail.com*). Do proměnné *gmailPass* vyplňte přihlašovací heslo k gmailovému účtu. Nakonec vyplňte do proměnné *pageSpeedApiKey* API klíč, který získáte na adrese [https://code.google.com/apis/console](https://code.google.com/apis/console). Zde přejděte v levém menu na stránku *Services*, kde povolte službu *Page Speed Online API* přepnutím na *ON*. Na stránce *API Access* najdete Váš API klíč pod nadpisem *Simple API Access*.
+Konfigurační proměnné můžete změnit v *config/config.json*. Připojení do databáze ponechte klidně předdefinované. Do proměnné *gmailLogin* vyplňte Vaši gmailovou adresu (např. *login@gmail.com*). Do proměnné *gmailPass* vyplňte přihlašovací heslo k gmailovému účtu. Nakonec vyplňte do proměnné *pageSpeedApiKey* API klíč, který získáte na adrese [https://code.google.com/apis/console](https://code.google.com/apis/console). Zde přejděte v levém menu na stránku *Services*, kde povolte službu *Page Speed Online API* přepnutím na *ON*. Na stránce *API Access* najdete Váš API klíč pod nadpisem *Simple API Access*.
 
 Spuštění
 --------
