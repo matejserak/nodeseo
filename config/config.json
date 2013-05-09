@@ -1,0 +1,17 @@
+{
+    "development": {
+        "db": "mongodb://localhost/nodeseo"
+    },
+    "test": {
+        "db": "mongodb://localhost/nodeseo_test"
+    },
+    "production": {
+        "db": "mongodb://user:pass@host:port/dbname"
+    },
+    "global": {
+        "pageSpeedApiKey": "",
+        "pageSpeedLocale": "en",
+        "gmailLogin": "",
+        "gmailPass": ""
+    }
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Chyba <%= status %> &ndash; <%= title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" href="/lib/icomoon/style.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="container2">
+        <header>
+            <a href="/" class="logo"><img src="/img/logo1.png" width="168" height="50" alt="logo"></a>
+            <% if (username) { %>
+            <div class="btn-group">
+                <button class="btn btn-primary"><%= username %></button>
+                <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+          <span class="caret">
+          </span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                    <li><a href="/profiles/<%= userID %>">Profil</a></li>
+                    <li><a href="/logout" target="_self">Odhlásit se</a></li>
+                </ul>
+            </div>
+            <div class="btn-group">
+                <button class="btn btn-primary btn-warning2">Vyberte test</button>
+                <button data-toggle="dropdown" class="btn btn-primary btn-warning2 dropdown-toggle">
+          <span class="caret">
+          </span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                    <li><a href="/tests/new">Provést nový</a></li>
+                    <li><a href="/tests">Vybrat z historie</a></li>
+                </ul>
+            </div>
+            <% } %>
+        </header>
+        <div class="container-fluid">
+            <div class="dashboard-container">
+                <div class="top-nav">
+                    <ul>
+                        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe022;"></div>Přehled</span></li>
+                        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe100;"></div>Obsah</span></li>
+                        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe11e;"></div>Odkazy</span></li>
+                        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>Rychlost</span></li>
+                    </ul>
+                    <% if (username) { %>
+                    <ul style="float:right">
+                        <li><a href="/tests/new">
+                            <div class="fs1" aria-hidden="true" data-icon="&#xe0b3;"></div>
+                            Nový test</a></li>
+                        <li style="margin-right:0"><a href="/tests">
+                            <div class="fs1" aria-hidden="true" data-icon="&#xe03f;"></div>
+                            Historie</a></li>
+                    </ul>
+                    <% } else { %>
+                    <ul style="float:right">
+                        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe0b3;"></div>Nový test</span></li>
+                        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe03f;"></div>Historie</span></li>
+                    </ul>
+                    <% } %>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="sub-nav">
+                    <div class="btn-group pull-right">
+                        <button class="btn btn-primary">Menu</button>
+                        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+              <span class="caret">
+              </span>
+                        </button>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="/tests/new">Nový test</a></li>
+                            <li><a href="/tests">Historie</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="dashboard-wrapper">
+                    <div class="left-sidebar no-margin">
+                        <div class="row-fluid page-not-found">
+                            <div class="span6 number" style="padding-right: 34px;"><%= status %></div>
+                            <div class="span6 no-margin">
+                                <h3><%= title %></h3>
+                                <% if (status == 404) { %>
+                                <p>Stránka <strong><%= url %></strong> nebyla nalezena.</p>
+                                <% } %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer><p>&copy; Matěj Šerák, FIT ČVUT, DP 2013</p></footer>
+
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/jquery.colorbox-min.js"></script>
+<script src="/lib/jquery.dataTables.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/google.jsapi.js"></script>
+
+</body>
+</html>

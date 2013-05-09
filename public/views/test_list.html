@@ -1,0 +1,76 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-header">
+                <div class="title">Historie provedených testů</div>
+            </div>
+            <div class="widget-body">
+                <div class="alert alert-block alert-success fade in" style="display:none;" ng-show="success.length">
+                    <button class="close" type="button" ng-hide="!success" ng-click="success=!success">×</button>
+                    <p>
+                        {{success}}
+                    </p>
+                </div>
+                <table class="table table-condensed table-striped table-bordered table-hover table-middle no-margin">
+                    <thead>
+                    <tr>
+                        <th colspan="2">URL testované stránky</th>
+                        <th>Optim. slovo #1</th>
+                        <th>Optim. slovo #2</th>
+                        <th>Datum vytvoření</th>
+                        <th style="width:215px">Akce</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="test in tests">
+                        <td style="width:40px"><a ng-href="/tests/{{test._id}}" title="zobrazit test" ui-jq="tooltip"
+                                                  style="padding-top: 5px;line-height: 17px;color:#000;"
+                                                  class="btn btn-block"><span aria-hidden="true"
+                                                                              data-icon="&#xe080;"></span></a>
+                        </td>
+                        <td><a ng-href="/tests/{{test._id}}" title="zobrazit test" ui-jq="tooltip">{{test.url}}</a>
+                        </td>
+                        <td>{{test.word1}}</td>
+                        <td>{{test.word2}}</td>
+                        <td>{{test.created | date:'d. M. yyyy (HH:mm)'}}</td>
+                        <td>
+                            <a title="zobrazit test" ui-jq="tooltip" ng-href="/tests/{{test._id}}"
+                               class="btn btn-success"><span aria-hidden="true"
+                                                             data-icon="&#xe080;"></span></a>
+                            <a title="otevřít v nové záložce" ui-jq="tooltip" href="{{test.url}}"
+                               class="btn btn-info" target="_blank"><i
+                                    class="icon-white icon-share-alt"></i></a>
+
+                            <a ng-href="/tests/{{test._id}}/print" target="_blank" title="tisková verze" ui-jq="tooltip"
+                               class="btn btn-warning2"><i class="icon-white icon-file-2"></i></a>
+
+                            <a ng-href="/tests/{{test._id}}/edit" title="editovat" ui-jq="tooltip"
+                               class="btn btn-warning"><i class="icon-white icon-pencil"></i></a>
+
+                            <span title="Opravdu odstranit?" class="btn btn-inverse"
+                                  confirm-button="remove(test._id)" yes="Odstranit"
+                                  no="Zavřít"><i
+                                    class="icon-white icon-trash"></i></span>
+                        </td>
+                    </tr>
+                    <tr style="display:none" ng-show="tests.length == 0">
+                        <td colspan="6">Historie testů je prázdná</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <button style="display:none;margin:22px 7px 0 0;width:214px" ng-show="tests.length > 1" type="button"
+                        class="btn btn-small pull-right" title="Opravdu vymazat?"
+                        confirm-button="removeAll()" yes="Vymazat"
+                        no="Zavřít">Vymazat historii
+                </button>
+
+                <pagination boundary-links="true" num-pages="noOfPages" current-page="currentPage"
+                            max-size="maxSize" previous-text="Předchozí" next-text="Následující"
+                            first-text="Začátek" last-text="Konec"></pagination>
+
+
+            </div>
+        </div>
+    </div>
+</div>

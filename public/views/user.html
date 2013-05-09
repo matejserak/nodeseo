@@ -1,0 +1,96 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget no-margin">
+            <div class="widget-header">
+                <div class="title">
+                    Profil uživatele
+                </div>
+            </div>
+            <div class="widget-body">
+                <div class="container-fluid">
+
+                    <div class="row-fluid">
+                        <div class="span2">
+                            <div class="thumbnail" style="margin-top:10px">
+                                <img alt="300x200" ng-src="/img/profile.png">
+                            </div>
+                        </div>
+                        <div class="span10">
+                            <div class="alert alert-block alert-success fade in" style="display:none;margin-top:10px" ng-show="info.message.length" ng-class='{alertSuccess: info.type == "success", alertWarning: info.type == "warning"}'>
+                                <button class="close" type="button" ng-hide="!info" ng-click="info=!info">×</button>
+                                <p>
+                                    {{info.message}}
+                                </p>
+                            </div>
+                            <form class="form-horizontal updateUser" ng-submit="update()" name="updateUser">
+                                <h5>
+                                    Základní informace
+                                </h5>
+                                <hr>
+                                <div class="control-group">
+                                    <label class="control-label">
+                                        E-mail:
+                                    </label>
+                                    <div class="controls">
+                                        <p style="position:relative;top:6px"><strong>{{user.email}}</strong></p>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label">
+                                        Basic Auth Key:
+                                    </label>
+                                    <div class="controls">
+                                        <p style="position:relative;top:6px"><small>{{user.authKey}}</small></p>
+                                    </div>
+                                </div>
+                                <h5>
+                                    Změna údajů
+                                </h5>
+                                <hr>
+                                <div class="control-group">
+                                    <label class="control-label" for="jmeno">
+                                        Jméno a příjmení
+                                    </label>
+                                    <div class="controls">
+                                        <input style="width:181px" type="text" id="jmeno" ng-model="user.name" required>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="password">
+                                        Nové heslo
+                                    </label>
+                                    <div class="controls">
+                                        <input style="width:181px" type="password" id="password" name="password" ng-model="user.password" required>
+                                    </div>
+                                </div>
+                                <div class="control-group">
+                                    <label class="control-label" for="password2">
+                                        Heslo znovu
+                                    </label>
+                                    <div class="controls">
+                                        <input style="width:181px" type="password" id="password2" name="password2" ng-model="password2" ui-validate-equals="user.password" required>
+                                        <span style="margin-left:8px" ng-show='updateUser.password2.$error.equal'>Hesla se musí shodovat!</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-actions">
+                                    <button type="submit" class="btn btn-medium btn-info">
+                                        Uložit změny
+                                    </button>
+
+                                    <button style="margin-left:10px" type="button" class="btn btn-small btn-danger" title="Opravdu chcete nenávratně zrušit účet?"
+                                            confirm-button="remove()" yes="Ano, zrušit"
+                                            no="Ne">Zrušit účet
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

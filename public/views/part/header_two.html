@@ -1,0 +1,25 @@
+<span ng-switch on="page.layout()">
+    <div class="btn-group" ng-switch-when="twoColumns">
+        <button class="btn btn-primary btn-success">{{page.testInfo().hostname}}</button>
+        <button data-toggle="dropdown" class="btn btn-primary btn-success dropdown-toggle">
+          <span class="caret">
+          </span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li><a ng-href="/tests/{{page.testInfo()._id}}/edit">Editovat test</a></li>
+        </ul>
+    </div>
+    <div class="btn-group" ng-switch-when="twoColumnsB">
+        <button class="btn btn-primary btn-success">{{page.testInfo().hostname}}</button>
+        <button data-toggle="dropdown" class="btn btn-primary btn-success dropdown-toggle">
+          <span class="caret">
+          </span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li><a ng-href="/tests/{{page.testInfo()._id}}/">Přehled</a></li>
+            <li><a ng-href="/tests/{{page.testInfo()._id}}/tab2/">Obsah</a></li>
+            <li><a ng-href="/tests/{{page.testInfo()._id}}/tab3/">Odkazy</a></li>
+            <li><a ng-href="/tests/{{page.testInfo()._id}}/tab4/">Rychlost</a></li>
+        </ul>
+    </div>
+</span>

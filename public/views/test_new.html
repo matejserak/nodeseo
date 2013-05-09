@@ -1,0 +1,84 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-header">
+                <div class="title" id="blockquotes">Test webové stránky</div>
+            </div>
+            <div class="widget-body">
+                <div class="alert alert-block alert-warning fade in" style="display:none;" ng-show="invalid">
+                    <button class="close" type="button" ng-hide="!invalid" ng-click="invalid=!invalid">×</button>
+                    <p>
+                        Test nemohl být proveden, překontrolujte správnost vyplněných polí.
+                    </p>
+                </div>
+                <div class="alert alert-block alert-info fade in" style="display:block;" ng-hide="invalid">
+                    <button data-dismiss="alert" class="close" type="button">×</button>
+                    <p>
+                        Všechna uvedená pole jsou povinná. Slova pro vyhodnocení musí mít alespoň 3 znaky.
+                    </p>
+                </div>
+                <form class="form-horizontal no-margin" ng-submit="create()">
+                    <div class="control-group">
+                        <label class="control-label" for="url">URL testované stránky</label>
+
+                        <div class="controls">
+                            <input type="url" id="url" class="span6"
+                                   placeholder="http://www.domena.cz/o-nas" ng-model="test.url"
+                                   required>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="word1">Vyhodnotit pro slova</label>
+
+                        <div class="controls controls-row">
+                            <input ng-model="test.word1" id="word1" class="span3" type="text" pattern=".{3,}"
+                                   placeholder="kamna" word-validate required>
+
+                            <div class="input-help">
+                                <div class="input-inner">
+                                    <h4>Slovo pro vyhodnocení musí být správně vyplněno:</h4>
+                                    <ul>
+                                        <li ng-class="pwdHasLetter">Každé pole musí obsahovat pouze
+                                            jedno slovo (žádné mezery či
+                                            čárky)
+                                        </li>
+                                        <li ng-class="pwdValidLength">Slovo musí mít minimálně 3 znaky
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input ng-model="test.word2" id="word2" class="span3" type="text" pattern=".{3,}"
+                                   placeholder="topení" word-validate required
+                                   style="margin-left: 2.56%;">
+
+                            <div class="input-help">
+                                <div class="input-inner">
+                                    <h4>Slovo pro vyhodnocení musí být správně vyplněno:</h4>
+                                    <ul>
+                                        <li ng-class="pwdHasLetter">Každé pole musí obsahovat pouze
+                                            jedno slovo (žádné mezery či
+                                            čárky)
+                                        </li>
+                                        <li ng-class="pwdValidLength">Slovo musí mít minimálně 3 znaky
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-actions no-margin">
+                        <button type="submit" class="btn btn-large btn-success pull-right">Spustit
+                            test
+                        </button>
+                        <button class="btn btn-large pull-right" disabled>Spustit test</button>
+                        <div class="clearfix">
+                        </div>
+                    </div>
+                </form>
+                <div class="loading">
+                    <div class="loading2">{{counter}}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,59 @@
+<div class="wrapper">
+    <div class="image_wrapper">
+        <img ng-src="/screenshots/{{page.testInfo().image}}.png" width="224" height="280" alt="">
+    </div>
+</div>
+<hr class="hr-stylish">
+<div class="wrapper">
+    <ul class="month-income">
+        <li><a href="{{page.testInfo().url}}" target="_blank">
+                  <span class="icon-block blue-block">
+                    <b class="fs1" aria-hidden="true" data-icon="&#xe131;"></b>
+                  </span>
+            <h5>Přejít na stránku</h5>
+
+            <p>{{page.testInfo().hostname}}</p>
+        </a></li>
+    </ul>
+</div>
+<hr class="hr-stylish">
+<div class="wrapper">
+    <ul class="progress-statistics">
+        <li>
+            <div class="details">
+                <span>PageRank (Google)</span>
+                <span class="pull-right">{{page.testInfo().pageRank}}/10</span>
+            </div>
+            <div class="progress progress-striped">
+                <div style="width: {{page.testInfo().pageRank}}0%" class="bar"></div>
+            </div>
+        </li>
+        <li>
+            <div class="details">
+                <span>S-Rank (Seznam)</span>
+                <span class="pull-right">{{page.testInfo().srank}}/10</span>
+            </div>
+            <div class="progress progress-striped progress-danger">
+                <div style="width: {{page.testInfo().srank}}0%;" class="bar"></div>
+            </div>
+        </li>
+        <li>
+            <div class="details">
+                <span>Alexa Traffic Rank (svět)</span>
+                <span class="pull-right">{{page.testInfo().alexaRankGlobal|alexa|number}}</span>
+            </div>
+            <div class="progress progress-striped progress-success">
+                <div style="width:{{100-(100/(100000/page.testInfo().alexaRankGlobal))|number:0}}%;" class="bar"></div>
+            </div>
+        </li>
+        <li>
+            <div class="details">
+                <span>Alexa Traffic Rank ({{page.testInfo().alexaRankCountry}})</span>
+                <span class="pull-right">{{page.testInfo().alexaRankLocal|alexa|number}}</span>
+            </div>
+            <div class="progress progress-info progress-striped">
+                <div style="width:{{100-(100/(10000/page.testInfo().alexaRankLocal))|number:0}}%;" class="bar"></div>
+            </div>
+        </li>
+    </ul>
+</div>

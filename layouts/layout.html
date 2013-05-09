@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en" ng-app="nodeseo" ng-controller="MainCtrl"><![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8" lang="en" ng-app="nodeseo" ng-controller="MainCtrl"><![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9" lang="en" ng-app="nodeseo" ng-controller="MainCtrl"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en" ng-app="nodeseo" ng-controller="MainCtrl"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>{{page.title()}}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" href="/lib/icomoon/style.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body id="{{page.currentItem()}}">
+<div id="container">
+    <div id="container2">
+
+        <header>
+            <a ng-href="/" class="logo"><img ng-src="/img/logo1.png" width="168" height="50" alt="logo"></a>
+            <div class="btn-group">
+                <button class="btn btn-primary" id="loggedUser"><%= username %></button>
+                <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+          <span class="caret">
+          </span>
+                </button>
+                <ul class="dropdown-menu pull-right">
+                    <li><a href="/profiles/<%= userID %>">Profil</a></li>
+                    <li><a href="/logout" target="_self">Odhlásit se</a></li>
+                </ul>
+            </div>
+            <div ng-switch on="page.layout()" style="float:right">
+                <div ng-switch-when="oneColumn">
+                    <div ng-include src="'/views/part/header_one.html'"></div>
+                </div>
+                <div ng-switch-when="twoColumns">
+                    <div ng-include src="'/views/part/header_two.html'"></div>
+                </div>
+                <div ng-switch-when="twoColumnsB">
+                    <div ng-include src="'/views/part/header_two.html'"></div>
+                </div>
+            </div>
+        </header>
+
+        <div class="container-fluid">
+            <div class="dashboard-container">
+                <div ng-switch on="page.layout()" id="menu">
+                    <div ng-switch-when="oneColumn">
+                        <div ng-include src="'/views/part/menu_one.html'"></div>
+                    </div>
+                    <div ng-switch-when="twoColumns">
+                        <div ng-include src="'/views/part/menu_two.html'"></div>
+                    </div>
+                    <div ng-switch-when="twoColumnsB">
+                        <div ng-include src="'/views/part/menu_two.html'"></div>
+                    </div>
+                </div>
+                <div class="dashboard-wrapper">
+                    <div class="left-sidebar" ng-class='{noMargin: page.layout()=="oneColumn"}'>
+                        <div ng-switch on="page.layout()" class="breadcrumbs">
+                            <div ng-switch-when="oneColumn"></div>
+                            <div ng-switch-when="twoColumns">
+                                <div ng-include src="'/views/part/breadcrumbs.html'"></div>
+                            </div>
+                        </div>
+                        <div ng-view></div>
+                    </div>
+                    <div ng-switch on="page.layout()">
+                        <div ng-switch-when="oneColumn"></div>
+                        <div ng-switch-when="twoColumns">
+                            <div class="right-sidebar" ng-include src="'/views/part/sidebar.html'"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer><p>&copy; Matěj Šerák, FIT ČVUT, DP 2013</p></footer>
+
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/jquery.colorbox-min.js"></script>
+<script src="/lib/jquery.dataTables.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/google.jsapi.js"></script>
+<script src="/lib/moment.min.js"></script>
+
+<script src="/lib/angular/angular.min.js"></script>
+<script src="/lib/angular/i18n/angular-locale_cs-cz_min.js"></script>
+<script src="/lib/angular/angular-resource.min.js"></script>
+<script src="/lib/angular-ui.min.js"></script>
+<script src="/lib/ui-bootstrap-tpls-0.2.0.min.js"></script>
+
+<script src="/app/nodeseo.app.js"></script>
+<script src="/app/nodeseo.services.js"></script>
+<script src="/app/nodeseo.directives.js"></script>
+<script src="/app/nodeseo.filters.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.main.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.test.list.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.test.new.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.test.edit.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.test.print.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.test.tab1.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.test.tab2.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.test.tab3.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.test.tab4.js"></script>
+<script src="/app/controllers/nodeseo.ctrl.user.js"></script>
+
+</body>
+</html>

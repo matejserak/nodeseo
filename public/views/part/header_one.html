@@ -1,0 +1,11 @@
+<div class="btn-group">
+    <button class="btn btn-primary btn-warning2">Vyberte test</button>
+    <button data-toggle="dropdown" class="btn btn-primary btn-warning2 dropdown-toggle">
+          <span class="caret">
+          </span>
+    </button>
+    <ul class="dropdown-menu pull-right">
+        <li ng-show='page.currentItem()!="novy"'><a ng-href="/tests/new">Provést nový</a></li>
+        <li ng-show='page.currentItem()!="historie"'><a ng-href="/tests">Vybrat z historie</a></li>
+    </ul>
+</div>

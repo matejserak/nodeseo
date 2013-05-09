@@ -1,0 +1,30 @@
+<div class="top-nav">
+    <ul>
+        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe022;"></div>Přehled</span></li>
+        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe100;"></div>Obsah</span></li>
+        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe11e;"></div>Odkazy</span></li>
+        <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>Rychlost</span></li>
+    </ul>
+    <ul style="float:right">
+        <li><a ng-class='{selected: page.currentItem()=="novy"}' ng-href="/tests/new">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe0b3;"></div>
+            Nový test</a></li>
+        <li style="margin-right:0"><a ng-class='{selected: page.currentItem()=="historie"}' ng-href="/tests">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe03f;"></div>
+            Historie</a></li>
+    </ul>
+    <div class="clearfix"></div>
+</div>
+<div class="sub-nav">
+    <div class="btn-group pull-right">
+        <button class="btn btn-primary">Menu</button>
+        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+              <span class="caret">
+              </span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li><a ng-href="/tests/new">Nový test</a></li>
+            <li><a ng-href="/tests">Historie</a></li>
+        </ul>
+    </div>
+</div>

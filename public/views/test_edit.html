@@ -1,0 +1,504 @@
+<div ng-include src="'/views/part/breadcrumbs.html'"></div>
+
+<form class="form-horizontal no-margin" ng-submit="update()">
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-header" id="topEdit">
+                <div class="title">Editace testu: {{test.hostname}}</div>
+            </div>
+        </div>
+
+        <div class="alert alert-block alert-success fade in" style="display:none;" ng-show="success">
+            <button class="close" type="button" ng-hide="!success" ng-click="success=!success">×</button>
+            <p>
+                Test byl úspěšně editován.
+            </p>
+        </div>
+
+    </div>
+</div>
+
+<div class="row-fluid">
+<div class="span6">
+    <div class="widget">
+        <div class="widget-body padding">
+
+            <div class="hero-unit">
+                <h5>Ranky</h5>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="pageRank">
+                    PageRank
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" max="10" id="pageRank" ng-model="test.result.other.ranks.pageRank" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="srank">
+                    S-Rank
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" max="10" id="srank" ng-model="test.result.other.ranks.srank" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="alexaRankGlobal">
+                    Alexa Rank (gl.)
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="1" id="alexaRankGlobal" ng-model="test.result.other.ranks.alexaRankGlobal" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="alexaRankLocal">
+                    Alexa Rank (lok.)
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="1" id="alexaRankLocal" ng-model="test.result.other.ranks.alexaRankLocal" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-unit">
+                <h5>Počet výskytů slova <span class="text-error">{{test.word1}}</span></h5>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label" for="h10">
+                    Nadpis H1
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h10" ng-model="test.result.body.keywordCount.0.h1" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h20">
+                    Nadpis H2
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h20" ng-model="test.result.body.keywordCount.0.h2" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h30">
+                    Nadpis H3
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h30" ng-model="test.result.body.keywordCount.0.h3" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h40">
+                    Nadpis H4
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h40" ng-model="test.result.body.keywordCount.0.h4" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h50">
+                    Nadpis H5
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h50" ng-model="test.result.body.keywordCount.0.h5" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h60">
+                    Nadpis H6
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h60" ng-model="test.result.body.keywordCount.0.h6" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="p0">
+                    Odstavec
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="p0" ng-model="test.result.body.keywordCount.0.p" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-unit">
+                <h5>Interakce</h5>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="like">
+                    Facebook Like
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="like" ng-model="test.result.links.social.facebook.like" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="comment">
+                    Facebook Comment
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="comment" ng-model="test.result.links.social.facebook.comment" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="twitter">
+                    Twitter
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="twitter" ng-model="test.result.links.social.twitter" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="googlePlus">
+                    Google Plus
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="text" id="googlePlus" ng-model="test.result.links.social.googlePlus" required>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="span6">
+    <div class="widget">
+        <div class="widget-body padding">
+
+            <div class="hero-unit">
+                <h5>Zpětné odkazy</h5>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="total">
+                    Celkem
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="total" ng-model="test.result.links.backlinks.total" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="uniqueDomain">
+                    &mdash; Unikátní domény
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="uniqueDomain" ng-model="test.result.links.backlinks.uniqueDomain" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="uniqueIP" required>
+                    &mdash; Unikátní IP adresy
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="uniqueIP" ng-model="test.result.links.backlinks.uniqueIP" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="uniqueCsite">
+                    &mdash; Unikátní C sítě
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="uniqueCsite" ng-model="test.result.links.backlinks.uniqueCsite" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-unit">
+                <h5>Počet výskytů slova <span class="text-error">{{test.word2}}</span></h5>
+            </div>
+
+
+            <div class="control-group">
+                <label class="control-label" for="h11">
+                    Nadpis H1
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h11" ng-model="test.result.body.keywordCount.1.h1" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h21">
+                    Nadpis H2
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h21" ng-model="test.result.body.keywordCount.1.h2" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h31">
+                    Nadpis H3
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h31" ng-model="test.result.body.keywordCount.1.h3" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h41">
+                    Nadpis H4
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h41" ng-model="test.result.body.keywordCount.1.h4" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h51">
+                    Nadpis H5
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h51" ng-model="test.result.body.keywordCount.1.h5" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="h61">
+                    Nadpis H6
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="h61" ng-model="test.result.body.keywordCount.1.h6" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="p1">
+                    Odstavec
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="p1" ng-model="test.result.body.keywordCount.1.p" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-unit">
+                <h5>Ostatní</h5>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="errors">
+                    Validita &ndash; errory
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="errors" ng-model="test.result.other.validity.errors" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="warnings">
+                    Validita &ndash; warningy
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="warnings" ng-model="test.result.other.validity.warnings" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="seznam">
+                    # záznamů v Seznamu
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="seznam" ng-model="test.result.search.indexCount.seznam" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="control-group">
+                <label class="control-label" for="google">
+                    # záznamů v Googlu
+                </label>
+
+                <div class="controls">
+                    <div class="input-append">
+                        <input type="number" min="0" id="google" ng-model="test.result.search.indexCount.google" required>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-body padding">
+
+                <button type="submit" class="btn btn-large pull-right btn btn-warning">Uložit změny</button>
+                <div class="clearfix"></div>
+
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+
+
+<div class="right-sidebar">
+    <div class="wrapper">
+        <div class="image_wrapper">
+            <img ng-src="/screenshots/{{test.image}}.png" width="224" height="280" alt="">
+        </div>
+    </div>
+    <hr class="hr-stylish">
+    <div class="wrapper">
+        <ul class="month-income">
+            <li><a href="{{test.url}}" target="_blank">
+                  <span class="icon-block blue-block">
+                    <b class="fs1" aria-hidden="true" data-icon="&#xe131;"></b>
+                  </span>
+                <h5>Přejít na stránku</h5>
+
+                <p>{{test.hostname}}</p>
+            </a></li>
+        </ul>
+    </div>
+    <hr class="hr-stylish">
+    <div class="wrapper">
+        <ul class="progress-statistics">
+            <li>
+                <div class="details">
+                    <span>PageRank (Google)</span>
+                    <span class="pull-right">{{test.result.other.ranks.pageRank}}/10</span>
+                </div>
+                <div class="progress progress-striped">
+                    <div style="width: {{test.result.other.ranks.pageRank}}0%" class="bar"></div>
+                </div>
+            </li>
+            <li>
+                <div class="details">
+                    <span>S-Rank (Seznam)</span>
+                    <span class="pull-right">{{test.result.other.ranks.srank}}/10</span>
+                </div>
+                <div class="progress progress-striped progress-danger">
+                    <div style="width: {{test.result.other.ranks.srank}}0%;" class="bar"></div>
+                </div>
+            </li>
+            <li>
+                <div class="details">
+                    <span>Alexa Traffic Rank (svět)</span>
+                    <span class="pull-right">{{test.result.other.ranks.alexaRankGlobal|alexa|number}}</span>
+                </div>
+                <div class="progress progress-striped progress-success">
+                    <div style="width:{{100-(100/(100000/test.result.other.ranks.alexaRankGlobal))|number:0}}%;"
+                         class="bar"></div>
+                </div>
+            </li>
+            <li>
+                <div class="details">
+                    <span>Alexa Traffic Rank ({{test.result.other.ranks.alexaRankCountry}})</span>
+                    <span class="pull-right">{{test.result.other.ranks.alexaRankLocal|alexa|number}}</span>
+                </div>
+                <div class="progress progress-info progress-striped">
+                    <div style="width:{{100-(100/(10000/test.result.other.ranks.alexaRankLocal))|number:0}}%;"
+                         class="bar"></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

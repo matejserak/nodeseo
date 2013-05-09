@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en"><!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <title>Zapomenuté heslo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <link rel="stylesheet" href="/lib/icomoon/style.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="shortcut icon" type="image/x-icon" href="/img/favicon.ico">
+</head>
+<body>
+<div id="container">
+    <div id="container2">
+<header>
+    <a href="/" class="logo"><img src="/img/logo1.png" width="168" height="50" alt="logo"></a>
+</header>
+<div class="container-fluid">
+    <div class="dashboard-container">
+        <div class="top-nav">
+            <ul>
+                <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe022;"></div>Přehled</span></li>
+                <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe100;"></div>Obsah</span></li>
+                <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe11e;"></div>Odkazy</span></li>
+                <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>Rychlost</span></li>
+            </ul>
+            <ul style="float:right">
+                <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe0b3;"></div>Nový test</span></li>
+                <li><span><div class="fs1" aria-hidden="true" data-icon="&#xe03f;"></div>Historie</span></li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="sub-nav">
+        </div>
+        <div class="dashboard-wrapper">
+            <div class="left-sidebar no-margin">
+                <div class="row-fluid">
+                    <div class="widget defaultBG">
+                        <div class="widget-body defaultBG">
+                            <div class="span3">&nbsp;</div>
+                            <div class="span6">
+                                <div class="sign-in-container">
+                                    <form action="/reset" class="login-wrapper" method="post">
+                                        <div class="header">
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <% if (message.length) { %>
+                                                    <div class="alert alert-block alert-<% if (type.length) { %><%= type %><% } %> fade in">
+                                                        <button data-dismiss="alert" class="close" type="button">×</button>
+                                                        <p style="padding:0"><%= message %></p>
+                                                    </div>
+                                                    <% } %>
+                                                    <h3 class="danger">Zapomenuté heslo<img src="img/logo2.png" width="78" height="77"
+                                                                       alt="Logo"
+                                                                       class="pull-right"></h3>
+
+                                                    <p>Zadejte e-mail, na který bude zasláno nové heslo.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="content">
+                                            <div class="row-fluid">
+                                                <div class="span12">
+                                                    <input class="input span12 email" name="email" placeholder="E-mail"
+                                                           type="email" value="<% if (email.length) { %><%= email %><% } %>" required>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="actions">
+                                            <input class="btn btn-danger" name="Login" type="submit" value="Zaslat nové heslo">
+                                            <p class="link"><a href="/login" target="_self">&laquo; Zpět na
+                                                přihlášení</a></p>
+                                            <div class="clearfix"></div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="span3">&nbsp;</div>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+<footer><p>&copy; Matěj Šerák, FIT ČVUT, DP 2013</p></footer>
+
+<script src="/lib/jquery.min.js"></script>
+<script src="/lib/jquery.colorbox-min.js"></script>
+<script src="/lib/jquery.dataTables.min.js"></script>
+<script src="/lib/bootstrap.min.js"></script>
+<script src="/lib/google.jsapi.js"></script>
+
+</body>
+</html>

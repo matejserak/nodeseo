@@ -1,0 +1,65 @@
+<div class="top-nav">
+    <ul>
+        <li><a ng-class='{selected: page.currentItem()=="tab1"}' ng-href="/tests/{{page.testInfo()._id}}/">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe022;"></div>
+            Přehled</a></li>
+        <li><a ng-class='{selected: page.currentItem()=="tab2"}' ng-href="/tests/{{page.testInfo()._id}}/tab2/">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe100;"></div>
+            Obsah</a></li>
+        <li><a ng-class='{selected: page.currentItem()=="tab3"}' ng-href="/tests/{{page.testInfo()._id}}/tab3/">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe11e;"></div>
+            Odkazy</a></li>
+        <li><a ng-class='{selected: page.currentItem()=="tab4"}' ng-href="/tests/{{page.testInfo()._id}}/tab4/">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe0a0;"></div>
+            Rychlost</a></li>
+    </ul>
+    <ul style="float:right">
+        <li><a ng-href="/tests/new">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe0b3;"></div>
+            Nový test</a></li>
+        <li style="margin-right:0"><a ng-href="/tests">
+            <div class="fs1" aria-hidden="true" data-icon="&#xe03f;"></div>
+            Historie</a></li>
+    </ul>
+    <div class="clearfix"></div>
+</div>
+<div class="sub-nav">
+    <ul ng-switch on="page.title()">
+        <div ng-switch-when="Přehled">
+            <li><a ng-href="" class="heading">{{page.title()}}</a></li>
+            <li><a ng-href="" scroll scroll-to="#klicove_prvky">Klíčové prvky</a></li>
+            <li><a ng-href="" scroll scroll-to="#informace">Informace pro roboty</a></li>
+            <li><a ng-href="" scroll scroll-to="#zdrojovy_kod">Zdrojový kód</a></li>
+        </div>
+        <div ng-switch-when="Obsah">
+            <li><a ng-href="" class="heading">{{page.title()}}</a></li>
+            <li><a ng-href="" scroll scroll-to="#seznam">Seznam</a></li>
+            <li><a ng-href="" scroll scroll-to="#google">Google</a></li>
+            <li><a ng-href="" scroll scroll-to="#frekvence">Frekvenční analýza slov</a></li>
+        </div>
+        <div ng-switch-when="Odkazy">
+            <li><a ng-href="" class="heading">{{page.title()}}</a></li>
+            <li><a ng-href="" scroll scroll-to="#interakce">Interakce</a></li>
+            <li><a ng-href="" scroll scroll-to="#odkazy">Odkazy vedoucí z webu</a></li>
+            <li><a ng-href="" scroll scroll-to="#dostupnost">Dostupnost odkazů</a></li>
+        </div>
+        <div ng-switch-default>
+            <li><a ng-href="" class="heading">{{page.title()}}</a></li>
+        </div>
+    </ul>
+    <div class="btn-group pull-right">
+        <button class="btn btn-primary">Menu</button>
+        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">
+              <span class="caret">
+              </span>
+        </button>
+        <ul class="dropdown-menu pull-right">
+            <li><a ng-href="/tests/{{page.testInfo()._id}}">Přehled</a></li>
+            <li><a ng-href="/tests/{{page.testInfo()._id}}/tab2">Obsah</a></li>
+            <li><a ng-href="/tests/{{page.testInfo()._id}}/tab3">Odkazy</a></li>
+            <li><a ng-href="/tests/{{page.testInfo()._id}}/tab4">Rychlost</a></li>
+            <li><a ng-href="/tests/new">Nový test</a></li>
+            <li><a ng-href="/tests">Historie</a></li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,16 @@
+<div class="row-fluid">
+    <div class="span12">
+        <div class="widget">
+            <div class="widget-body">
+                <ul class="breadcrumb-beauty">
+                    <li><a ng-href="/tests/{{page.testInfo()._id}}/">{{page.testInfo().hostname}}</a></li>
+                    <li ng-class='{brSelected: page.currentItem()=="tab1"}'><a ng-href="/tests/{{page.testInfo()._id}}/">Přehled</a></li>
+                    <li ng-class='{brSelected: page.currentItem()=="tab2"}'><a ng-href="/tests/{{page.testInfo()._id}}/tab2/">Obsah</a></li>
+                    <li ng-class='{brSelected: page.currentItem()=="tab3"}'><a ng-href="/tests/{{page.testInfo()._id}}/tab3/">Odkazy</a></li>
+                    <li ng-class='{brSelected: page.currentItem()=="tab4"}'><a ng-href="/tests/{{page.testInfo()._id}}/tab4/">Rychlost</a></li>
+                    <li id="lastItem" ng-class='{brSelected: page.currentItem()=="edit"}'><a ng-href="/tests/{{page.testInfo()._id}}/edit">Editovat</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
